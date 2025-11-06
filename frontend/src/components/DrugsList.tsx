@@ -57,17 +57,26 @@ export const DrugsList = () => {
     return tableConfigError || drugsError;
   }, [tableConfigError, drugsError]);
 
+  // Format date as DD.MM.YYYY
+  const formatDate = useCallback((dateString: string): string => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+  }, []);
+
   // Helper function to get value from drug object by column key
   const getCellValue = useCallback((drug: Drug, columnKey: string): string => {
-    const value = drug[columnKey as keyof Drug];
-    
-    // Format dates
-    if (columnKey === 'launchDate' && value) {
-      return new Date(value).toLocaleDateString();
+    switch (columnKey) {
+      case 'name':
+        return `${drug.genericName} (${drug.brandName})`;
+      case 'launchDate':
+        return formatDate(drug.launchDate);
+      default:
+        return drug[columnKey as keyof Drug];
     }
-    
-    return value?.toString() || '';
-  }, []);
+  }, [formatDate]);
 
   // Handler for pagination page change
   const handleChangePage = useCallback((_event: unknown, newPage: number) => {
