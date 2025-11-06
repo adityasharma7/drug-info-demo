@@ -10,7 +10,7 @@ export const databaseConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD || 'postgres',
   database: process.env.DB_NAME || 'drug_info_db',
   entities: [Drug, TableConfig],
-  synchronize: process.env.NODE_ENV !== 'production', // Auto-create tables in development
+  synchronize: process.env.DB_SYNCHRONIZE === 'true' || process.env.NODE_ENV === 'development',
   logging: process.env.NODE_ENV !== 'production',
 };
 

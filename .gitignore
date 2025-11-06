@@ -38,6 +38,9 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# Docker
+docker-compose.override.yml
+
 # Misc
 *.swp
 *.swo

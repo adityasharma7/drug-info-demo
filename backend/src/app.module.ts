@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { DrugModule } from './modules/drug/drug.module';
 import { TableConfigModule } from './modules/table-config/table-config.module';
 import { databaseConfig } from './config/database.config';
+import { SeedService } from './seed.service';
 
 @Module({
   imports: [
@@ -13,6 +14,6 @@ import { databaseConfig } from './config/database.config';
     TableConfigModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, SeedService],
 })
 export class AppModule {}
