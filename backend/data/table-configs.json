@@ -1,0 +1,7 @@
+[
+  { "tableName": "drug", "columnKey": "id", "label": "Id", "visible": true, "order": 1, "dataType": "uuid" },
+  { "tableName": "drug", "columnKey": "code", "label": "Drug Code", "visible": true, "order": 2, "dataType": "string" },
+  { "tableName": "drug", "columnKey": "name", "label": "Name", "visible": true, "order": 3, "dataType": "string" },
+  { "tableName": "drug", "columnKey": "company", "label": "Company", "visible": true, "order": 4, "dataType": "string" },
+  { "tableName": "drug", "columnKey": "launchDate", "label": "Launch Date", "visible": true, "order": 5, "dataType": "date" }
+]

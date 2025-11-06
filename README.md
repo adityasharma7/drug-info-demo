@@ -5,7 +5,8 @@ A full-stack demonstration application with a React frontend and NestJS backend 
 ## Tech Stack
 
 - **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS
-- **Backend**: NestJS + TypeScript
+- **Backend**: NestJS + TypeScript + TypeORM
+- **Database**: PostgreSQL
 - **Styling**: Tailwind CSS (utility-first CSS framework)
 
 ## Quick Start
@@ -98,12 +99,25 @@ drug-info-demo/
 
 ### Backend
 
-The backend is built with NestJS and provides RESTful API endpoints. For more detailed backend documentation, see [backend/README.md](./backend/README.md).
+The backend is built with NestJS, TypeORM, and PostgreSQL. For more detailed backend documentation, see [backend/README.md](./backend/README.md) and [API.md](./API.md).
 
 - **Port**: 3000
 - **Framework**: NestJS
+- **Database**: PostgreSQL with TypeORM
 - **Language**: TypeScript
-- **Features**: CORS enabled, logging, hot reload in dev mode
+- **Features**:
+  - RESTful API endpoints
+  - Drug management with sorting and filtering
+  - Table configuration system
+  - Input validation
+  - CORS enabled
+  - Hot reload in dev mode
+
+**API Endpoints:**
+- `/drugs` - Drug management API
+- `/table-config` - Table configuration API
+
+See [API.md](./API.md) for complete API documentation.
 
 ### Frontend
 

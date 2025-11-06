@@ -41,7 +41,20 @@ npm run dev:frontend
 
 The frontend will start on `http://localhost:5173`
 
-### 4. Open in Browser
+### 4. (Optional) Seed Database
+
+Populate the database with sample data:
+
+```bash
+cd backend
+npm run seed
+```
+
+This will add:
+- 15 sample drugs
+- 8 table column configurations
+
+### 5. Open in Browser
 
 Open your browser and navigate to:
 
@@ -54,6 +67,21 @@ You should see the Drug Info Demo application with a connection to the backend!
 ## Verify Everything is Working
 
 When the frontend loads, it will attempt to fetch data from the backend. If successful, you'll see "Hello World!" displayed on the page, indicating the frontend and backend are properly connected.
+
+### Test the API
+
+You can test the API endpoints:
+
+```bash
+# Get all drugs (if seeded)
+curl http://localhost:3000/drugs
+
+# Get drugs sorted by launch date
+curl "http://localhost:3000/drugs?sortBy=launchDate&order=DESC"
+
+# Get table configuration
+curl http://localhost:3000/table-config
+```
 
 ## Development Workflow
 

@@ -10,7 +10,10 @@
     "watch": "tsc -w",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "seed": "ts-node src/scripts/seed-all.ts",
+    "seed:drugs": "ts-node src/scripts/seed-drugs.ts",
+    "seed:config": "ts-node src/scripts/seed-table-config.ts"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
