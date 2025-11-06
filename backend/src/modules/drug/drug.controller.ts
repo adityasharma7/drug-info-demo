@@ -16,6 +16,11 @@ import { FindDrugsQueryDto } from '../../dto/find-drugs-query.dto';
 export class DrugController {
   constructor(private readonly drugService: DrugService) {}
 
+  @Get('companies')
+  getCompanies() {
+    return this.drugService.getCompanies();
+  }
+
   @Get()
   find(@Query(ValidationPipe) queryDto: FindDrugsQueryDto) {
     return this.drugService.find(queryDto);

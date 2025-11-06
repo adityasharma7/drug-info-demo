@@ -55,5 +55,15 @@ export class DrugService {
       },
     };
   }
+
+  async getCompanies(): Promise<string[]> {
+    const results = await this.drugRepository
+      .createQueryBuilder('drug')
+      .select('DISTINCT drug.company', 'company')
+      .orderBy('drug.company', 'ASC')
+      .getRawMany();
+
+    return results.map((result) => result.company);
+  }
 }
 
