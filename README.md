@@ -4,9 +4,9 @@ A full-stack demonstration application with a React frontend and NestJS backend 
 
 ## Tech Stack
 
-- **Frontend**: React 18 + TypeScript + Vite
+- **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS
 - **Backend**: NestJS + TypeScript
-- **Styling**: Modern CSS with responsive design
+- **Styling**: Tailwind CSS (utility-first CSS framework)
 
 ## Quick Start
 
@@ -107,13 +107,14 @@ The backend is built with NestJS and provides RESTful API endpoints. For more de
 
 ### Frontend
 
-The frontend is built with React and Vite for a modern, fast development experience. For more detailed frontend documentation, see [frontend/README.md](./frontend/README.md).
+The frontend is built with React, Vite, and Tailwind CSS for a modern, fast development experience. For more detailed frontend documentation, see [frontend/README.md](./frontend/README.md).
 
 - **Port**: 5173
 - **Framework**: React 18
 - **Build Tool**: Vite
 - **Language**: TypeScript
-- **Features**: HMR, proxy to backend API, responsive design
+- **Styling**: Tailwind CSS
+- **Features**: HMR, proxy to backend API, responsive design, utility-first CSS
 
 ## Environment Configuration
 

@@ -2,6 +2,8 @@
 
 This guide will help you get the Drug Info Demo application up and running.
 
+**Tech Stack:** React 18 + Vite + Tailwind CSS + NestJS + TypeScript
+
 ## Prerequisites
 
 - Node.js (v18 or higher recommended)
