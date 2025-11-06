@@ -1,0 +1,37 @@
+{
+  "name": "drug-info-demo",
+  "version": "1.0.0",
+  "description": "Drug Information Demo Application",
+  "private": true,
+  "scripts": {
+    "backend:install": "cd backend && npm install",
+    "backend:dev": "cd backend && npm run start:dev",
+    "backend:build": "cd backend && npm run build",
+    "backend:start": "cd backend && npm start",
+    "backend:test": "cd backend && npm test",
+    "backend:test:watch": "cd backend && npm run test:watch",
+    "backend:test:cov": "cd backend && npm run test:cov",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:preview": "cd frontend && npm run preview",
+    "frontend:lint": "cd frontend && npm run lint",
+    "install:all": "npm run backend:install && npm run frontend:install",
+    "dev:backend": "npm run backend:dev",
+    "dev:frontend": "npm run frontend:dev",
+    "build:all": "npm run backend:build && npm run frontend:build",
+    "install": "npm run install:all",
+    "dev": "echo 'Run npm run dev:backend and npm run dev:frontend in separate terminals'",
+    "build": "npm run build:all"
+  },
+  "keywords": [
+    "drug-info",
+    "nestjs",
+    "react",
+    "vite",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
