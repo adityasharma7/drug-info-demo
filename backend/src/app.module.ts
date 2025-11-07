@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CacheModule } from '@nestjs/cache-manager';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DrugModule } from './modules/drug/drug.module';
@@ -9,6 +10,11 @@ import { SeedService } from './seed.service';
 
 @Module({
   imports: [
+    CacheModule.register({
+      isGlobal: true,
+      ttl: 300000, // 5 minutes in milliseconds
+      max: 100, // maximum number of items in cache
+    }),
     TypeOrmModule.forRoot(databaseConfig),
     DrugModule,
     TableConfigModule,

@@ -16,16 +16,18 @@
     "seed:config": "ts-node src/scripts/seed-table-config.ts"
   },
   "dependencies": {
+    "@nestjs/cache-manager": "^2.3.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.0",
-    "typeorm": "^0.3.17",
-    "pg": "^8.11.0",
-    "class-validator": "^0.14.0",
+    "cache-manager": "^5.7.6",
     "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.0.0"
+    "rxjs": "^7.0.0",
+    "typeorm": "^0.3.17"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
