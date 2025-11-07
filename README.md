@@ -50,6 +50,117 @@ npm run build
 
 This will build both the backend and frontend for production.
 
+### Running with Docker
+
+The easiest way to run the entire application stack is using Docker Compose. This will start PostgreSQL, backend, and frontend services in containers.
+
+#### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) installed
+- [Docker Compose](https://docs.docker.com/compose/install/) installed
+
+#### Quick Start with Docker
+
+1. **Start all services:**
+
+```bash
+docker-compose up
+```
+
+Or run in detached mode (background):
+
+```bash
+docker-compose up -d
+```
+
+2. **Access the application:**
+   - Frontend: `http://localhost:5173`
+   - Backend API: `http://localhost:3000`
+   - PostgreSQL: `localhost:5433` (mapped to avoid conflicts with local PostgreSQL)
+
+3. **Stop all services:**
+
+```bash
+docker-compose down
+```
+
+4. **Stop and remove volumes (clean slate):**
+
+```bash
+docker-compose down -v
+```
+
+#### Docker Services
+
+The `docker-compose.yml` defines three services:
+
+- **postgres**: PostgreSQL 14 database
+  - Port: `5433:5432` (external:internal)
+  - Database: `drug_info_db`
+  - Credentials: `postgres/postgres`
+  - Data persisted in Docker volume
+
+- **backend**: NestJS API server
+  - Port: `3000:3000`
+  - Auto-seeds database on startup
+  - Depends on PostgreSQL health check
+
+- **frontend**: React + Vite development server
+  - Port: `5173:5173`
+  - Hot reload enabled via volume mounts
+  - Proxies API requests to backend
+
+#### Useful Docker Commands
+
+**View logs:**
+
+```bash
+# All services
+docker-compose logs -f
+
+# Specific service
+docker-compose logs -f backend
+docker-compose logs -f frontend
+docker-compose logs -f postgres
+```
+
+**Rebuild services:**
+
+```bash
+# Rebuild all services
+docker-compose build
+
+# Rebuild specific service
+docker-compose build backend
+
+# Rebuild and restart
+docker-compose up --build
+```
+
+**Check service status:**
+
+```bash
+docker-compose ps
+```
+
+**Access container shell:**
+
+```bash
+# Backend container
+docker-compose exec backend sh
+
+# PostgreSQL container
+docker-compose exec postgres psql -U postgres -d drug_info_db
+```
+
+**Reseed database:**
+
+The backend automatically seeds the database on startup when `AUTO_SEED=true` is set. To reseed:
+
+```bash
+docker-compose restart backend
+```
+
 ## Available Scripts
 
 ### Root Level Scripts
